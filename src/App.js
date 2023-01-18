@@ -9,7 +9,7 @@ import View from "./pages/View/View";
 
 const Layout = () => {
   return (
-    <div className="bg-[black]">
+    <div className=" dark:bg-[black]">
       <Nav />
       <Outlet />
       <Footer />
@@ -48,9 +48,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <div className="bg-white dark:bg-black dark:text-white text-black">
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 

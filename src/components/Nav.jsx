@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { IoSunnyOutline, IoSunnySharp } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
+import useDarkMode from "../utils/useDarkMode";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [themeStyle, setThemeStyle] = useDarkMode();
+
+  useDarkMode();
 
   return (
-    <div className="text-primary flex justify-between h-20 max-w-[1024px] px-4 m-auto items-center">
+    <div className="text-secondary dark:bg-black dark:text-primary flex justify-between h-20 max-w-[1024px] px-4 m-auto items-center">
       <h1 className="font-bold text-[#E04F06] flex w-full text-3xl ">
         Exercise
       </h1>
@@ -22,6 +28,11 @@ const Nav = () => {
         </li>
         <li className="p-4 uppercase">
           <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <button className="p-4" onClick={(e) => setThemeStyle(!themeStyle)}>
+            <IoSunnyOutline size="22" />
+          </button>
         </li>
       </ul>
       <div onClick={(e) => setIsOpen(!isOpen)} className="block md:hidden">
