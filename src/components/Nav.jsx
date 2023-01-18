@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,18 @@ const Nav = () => {
         Exercise
       </h1>
       <ul className="hidden md:flex">
-        <li className="p-4">View</li>
-        <li className="p-4">Create</li>
+        <li className="p-4 uppercase">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="p-4 uppercase">
+          <Link to="/view">View</Link>
+        </li>
+        <li className="p-4 uppercase">
+          <Link to="/profile">profile</Link>
+        </li>
+        <li className="p-4 uppercase">
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
       <div onClick={(e) => setIsOpen(!isOpen)} className="block md:hidden">
         {isOpen ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -26,9 +37,19 @@ const Nav = () => {
         <h1 className=" font-bold text-[#E04F06] flex w-full text-3xl m-4 p-4 ">
           Exercise
         </h1>
+        <li className="p-4 uppercase">
+          <Link to="/">Home</Link>
+        </li>
         <ul className=" p-4 uppercase">
-          <li className="p-4 border-b border-primary">View</li>
-          <li className="p-4 border-b border-primary">Create</li>
+          <li className="p-4 border-b border-primary">
+            <Link to="/view">View</Link>
+          </li>
+          <li className="p-4 border-b border-primary">
+            <Link to="/profile">Profile</Link>
+          </li>
+          <li className="p-4 border-b border-primary">
+            <Link to="/login">Login</Link>
+          </li>
         </ul>
       </div>
     </div>
