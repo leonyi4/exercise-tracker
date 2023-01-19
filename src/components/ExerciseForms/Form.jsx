@@ -1,37 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
-import Content from "./Content";
+import React, { useState } from "react";
+import Content from "./components/Content";
+import DropDown from "./components/DropDown";
 
 const Form = () => {
-  const options = ["", "Cardio", "Weight", "Calisthenics", "flexibility"];
-  const defaultOption = options[0];
   const [selected, setSelected] = useState("");
-  useEffect(() => {
-    if (selected === "Weight") {
-      console.log(2);
-    }
-    if (selected === "Calisthenics") {
-      console.log(3);
-    }
-    if (selected === "flexibility") {
-      console.log(4);
-    }
-  }, [selected]);
 
-  let content = <div></div>;
+  const handleSelect = (id) => {
+    setSelected(id);
+  };
 
   return (
     <div>
-      <form className="bg-green h-40 w-[500px] p-4">
-        <div>
-          <Dropdown
-            options={options}
-            onChange={(e) => setSelected(e.value)}
-            value={defaultOption}
-            placeholder="Select an option"
-          />
-        </div>
+      <form className="bg-green max-h-80 w-[500px] p-4">
+        <DropDown onSetSelect={handleSelect} selected={selected} />
         <Content selected={selected} />
       </form>
     </div>

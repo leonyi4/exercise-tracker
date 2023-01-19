@@ -43,7 +43,7 @@ const Nav = () => {
       <div
         className={
           isOpen
-            ? "fixed left-0 top-0 w-[60%] border-r-2 border-primary dark:border-secondary bg-[#65e19f] dark:bg-[#1e1d1d] h-full ease-in-out duration-[400ms]"
+            ? "z-1 fixed left-0 top-0 w-[60%] border-r-2 border-primary dark:border-secondary bg-[#65e19f] dark:bg-[#1e1d1d] h-full ease-in-out duration-[400ms]"
             : "fixed left-[-100%]"
         }
       >

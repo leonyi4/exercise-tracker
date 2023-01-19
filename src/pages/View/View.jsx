@@ -18,7 +18,7 @@ const View = () => {
   return (
     <div className="max-w-[1024px] mx-auto h-screen flex flex-col ">
       <div className="mx-auto">{content}</div>
-      <div className="mx-auto">
+      <div className="mx-auto mt-20">
         <div>Example</div>
         <div>Example</div>
       </div>
