@@ -13,7 +13,7 @@ const Nav = () => {
   return (
     <div className=" text-secondary dark:bg-black dark:text-primary flex justify-between h-20 max-w-[1024px] px-4 m-auto items-center">
       <h1 className="font-bold text-brown dark:text-orange flex w-full text-3xl ">
-        Exercise Tracker
+        CET
       </h1>
       <ul className="hidden md:flex uppercase">
         <li className="p-4 ">
@@ -48,7 +48,7 @@ const Nav = () => {
         }
       >
         <h1 className=" font-bold text-brown dark:text-orange flex w-full text-3xl m-4 p-4 ">
-          Exercise Tracker
+          CET
         </h1>
 
         <ul className=" p-4 uppercase">
