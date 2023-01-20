@@ -16,7 +16,7 @@ const DropDown = (props) => {
   return (
     <div className=" h-[40px] flex flex-col text-center align-middle">
       <button
-        className=" max-w-fit mx-auto text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+        className=" max-w-fit mx-auto text-black dark:text-white bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800"
         type="button"
         onClick={(e) => setIsOpen(!isOpen)}
       >

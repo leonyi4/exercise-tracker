@@ -13,10 +13,13 @@ const View = () => {
   ) : (
     <button
       onClick={(e) => setIsAdding(!isAdding)}
-      className="bg-green border-primary border-[3px] rounded-md p-4
-                  font-semibold text-xl"
+      className=" rounded-lg p-4 mt-4 font-semibold text-3xl  border-[4px]
+
+      transition bg-green dark:bg-brown text-secondary dark:text-primary dark:border-primary border-secondary
+        hover:bg-brown dark:hover:bg-[#6d2b1b]  hover:text-primary hover:border-primary
+        dark:hover:border-secondary dark:hover:text-secondary dark:hover:bg-green hover:p-8  duration-500"
     >
-      Add an activity
+      Add an Exercise
     </button>
   );
 

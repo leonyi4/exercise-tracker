@@ -26,10 +26,10 @@ const Form = (props) => {
   };
 
   return (
-    <div>
+    <div className="mt-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-black dark:bg-green max-h-80 w-[500px] p-4 border-4 rounded-xl 
+        className="bg-black dark:bg-green max-h-96 w-[600px] p-4 border-4 rounded-xl 
         border-secondary dark:border-white"
       >
         <DropDown onSetSelect={handleSelect} selected={selected} />
