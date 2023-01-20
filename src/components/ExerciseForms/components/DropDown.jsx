@@ -29,7 +29,7 @@ const DropDown = (props) => {
               onClick={(e) => {
                 e.preventDefault();
                 setIsOpen(!isOpen);
-                props.onSetSelect("cardio");
+                props.onSetSelect("Cardio");
               }}
               className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
@@ -41,7 +41,7 @@ const DropDown = (props) => {
               onClick={(e) => {
                 e.preventDefault();
                 setIsOpen(!isOpen);
-                props.onSetSelect("weight");
+                props.onSetSelect("Weight");
               }}
               className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
@@ -53,7 +53,7 @@ const DropDown = (props) => {
               onClick={(e) => {
                 e.preventDefault();
                 setIsOpen(!isOpen);
-                props.onSetSelect("calisthenics");
+                props.onSetSelect("Calisthenics");
               }}
               className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
@@ -65,11 +65,11 @@ const DropDown = (props) => {
               onClick={(e) => {
                 e.preventDefault();
                 setIsOpen(!isOpen);
-                props.onSetSelect("flexibility");
+                props.onSetSelect("Flexibility");
               }}
               className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >
-              flexibility
+              Flexibility
             </button>
           </li>
         </ul>

@@ -3,8 +3,13 @@ import Form from "../../components/ExerciseForms/Form";
 
 const View = () => {
   const [isAdding, setIsAdding] = useState(false);
+
+  const closeHandler = () => {
+    setIsAdding(!isAdding);
+  };
+
   let content = isAdding ? (
-    <Form />
+    <Form closeHandler={closeHandler} />
   ) : (
     <button
       onClick={(e) => setIsAdding(!isAdding)}
