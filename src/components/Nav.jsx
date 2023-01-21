@@ -3,7 +3,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BiMoon } from "react-icons/bi";
 import { IoSunnyOutline } from "react-icons/io5";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useDarkMode from "../utils/useDarkMode";
 
 const Nav = () => {
@@ -17,16 +17,44 @@ const Nav = () => {
       </h1>
       <ul className="hidden md:flex uppercase font-medium">
         <li className="p-4 hover:text-brown dark:hover:text-green">
-          <Link to="/">Home</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `text-brown dark:text-green` : undefined
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
         </li>
         <li className="p-4 hover:text-brown dark:hover:text-green">
-          <Link to="/view">View</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `text-brown dark:text-green` : undefined
+            }
+            to="/view"
+          >
+            View
+          </NavLink>
         </li>
         <li className="p-4 hover:text-brown dark:hover:text-green">
-          <Link to="/profile">profile</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `text-brown dark:text-green` : undefined
+            }
+            to="/profile"
+          >
+            profile
+          </NavLink>
         </li>
         <li className="p-4 hover:text-brown dark:hover:text-green">
-          <Link to="/login">Login</Link>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `text-brown dark:text-green` : undefined
+            }
+            to="/login"
+          >
+            Login
+          </NavLink>
         </li>
         <li>
           <button
@@ -59,16 +87,44 @@ const Nav = () => {
 
         <ul className=" p-4 uppercase">
           <li className="p-4 border-b  border-primary dark:border-secondary hover:text-brown dark:hover:text-green">
-            <Link to="/">Home</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `text-brown dark:text-green` : undefined
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
           </li>
           <li className="p-4 border-b  border-primary dark:border-secondary hover:text-brown dark:hover:text-green">
-            <Link to="/view">View</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `text-brown dark:text-green ` : undefined
+              }
+              to="/view"
+            >
+              View
+            </NavLink>
           </li>
           <li className="p-4 border-b border-primary dark:border-secondary hover:text-brown dark:hover:text-green">
-            <Link to="/profile">Profile</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `text-brown dark:text-green` : undefined
+              }
+              to="/profile"
+            >
+              Profile
+            </NavLink>
           </li>
           <li className="p-4 border-b border-primary dark:border-secondary hover:text-brown dark:hover:text-green">
-            <Link to="/login">Login</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `text-brown dark:text-green` : undefined
+              }
+              to="/login"
+            >
+              Login
+            </NavLink>
           </li>
           <li>
             <button

@@ -23,23 +23,23 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
       {
-        path: "/view",
+        path: "view",
         element: <View />,
       },
       {
-        path: "/profile",
+        path: "profile",
         element: <Profile />,
       },
       {
-        path: "/profile/:id",
+        path: "profile/:id",
         element: <Profile />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
     ],
