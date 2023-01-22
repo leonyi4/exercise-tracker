@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Content from "./components/Content";
 import DropDown from "./components/DropDown";
 
@@ -6,10 +7,27 @@ const Form = (props) => {
   const [selected, setSelected] = useState("");
   const [formData, setFormData] = useState({});
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    props.closeHandler();
+    fetch(
+      "https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data.json",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((response) => {
+        const data = response.json();
+        console.log(data);
+      })
+      .catch((err) => console.log(err.message));
+
+    navigate("/view");
   };
 
   const formDataHandler = (data) => {

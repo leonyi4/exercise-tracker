@@ -1,45 +1,37 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import ExerciseActivity from "./ExerciseActivity";
-const DUMMY = [
-  {
-    type: "Cardio",
-    name: "running",
-    speed: 10,
-    duration: 30,
-  },
-
-  {
-    type: "Weight",
-    name: "Dumbbell",
-    reps: 5,
-    sets: 4,
-    duration: 20,
-  },
-  {
-    type: "Calisthenics",
-    name: "push up",
-    reps: 10,
-    sets: 4,
-    duration: 30,
-  },
-  {
-    type: "Flexibility",
-    name: "back stretch",
-    reps: 5,
-    sets: 4,
-    duration: 15,
-  },
-];
 
 const ExerciseList = (props) => {
+  const [formData, setFormData] = useState();
+
+  const fetchExercises = useCallback(() => {
+    fetch(
+      "https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data.json"
+    )
+      .then(async (response) => {
+        const data = await response.json();
+
+        const loadedData = [];
+        for (const key in data) {
+          loadedData.push({ id: key, ...data[key] });
+        }
+        console.log(loadedData);
+
+        setFormData(loadedData);
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  useEffect(() => {
+    fetchExercises();
+  }, [fetchExercises]);
+
   return (
     <div className="mt-20 max-h-full bg-secondary ">
       <ul className="no-underline w-full ">
-        {DUMMY.map((activity) => (
-          <ExerciseActivity
-            key={props.name + props.duration}
-            activity={activity}
-          />
+        {formData.map((activity) => (
+          <ExerciseActivity key={uuidv4()} activity={activity} />
         ))}
       </ul>
     </div>
