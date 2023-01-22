@@ -26,7 +26,7 @@ const Form = (props) => {
   };
 
   return (
-    <div className="mt-4">
+    <div className="mt-20">
       <form
         onSubmit={handleSubmit}
         className="bg-black dark:bg-green max-h-96 w-[600px] p-4 border-4 rounded-xl 
