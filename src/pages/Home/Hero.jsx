@@ -22,7 +22,7 @@ const Hero = () => {
             className="text-2xl font-medium border-2 rounded-md p-2 
              
              transition hover:bg-primary hover:border-black hover:text-secondary 
-             border-white bg-secondary text-primary hover:p-4 hover:text-3xl
+             border-primary bg-secondary text-primary hover:p-4 hover:text-3xl
              dark:bg-primary dark:border-secondary dark:text-secondary
              dark:hover:bg-secondary dark:hover:border-primary dark:hover:text-primary
              duration-300

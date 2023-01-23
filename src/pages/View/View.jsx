@@ -18,7 +18,7 @@ const View = () => {
 
       transition bg-green dark:bg-brown text-secondary dark:text-primary dark:border-primary border-secondary
         hover:bg-brown   hover:text-primary hover:border-primary
-        dark:hover:border-secondary dark:hover:text-secondary dark:hover:bg-green hover:p-8  duration-500"
+        dark:hover:border-secondary dark:hover:text-secondary dark:hover:bg-green hover:p-8 hover:text-4xl duration-500"
     >
       Add an Exercise
     </button>

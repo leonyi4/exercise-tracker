@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <div className=" dark:bg-[black]">
       <Nav />
@@ -13,3 +13,5 @@ export const Layout = () => {
     </div>
   );
 };
+
+export default Layout;
