@@ -28,11 +28,15 @@ const Form = (props) => {
   };
 
   const formDataHandler = (data) => {
+    const s = new Date();
+    let date = s.toString();
+    date = date.slice(0, 15);
+
     setFormData((formData) => ({
       ...formData,
       type: selected,
       ...data,
-      date: new Date(),
+      date: date,
     }));
   };
 

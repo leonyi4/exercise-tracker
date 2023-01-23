@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply mx-1 mt-2 p-2 rounded-2xl border-[3px] text-white dark:text-black  font-semibold
+    dark:bg-primary dark:border-secondary 
+     bg-secondary border-primary;
+}
+
+.btn:hover {
+  @apply dark:hover:text-primary hover:bg-orange dark:hover:bg-brown;
+}

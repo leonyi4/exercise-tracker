@@ -22,7 +22,6 @@ const ExerciseActivity = (props) => {
 export default ExerciseActivity;
 
 const CardioActivity = (props) => {
-  let s = props.activity.date.slice(0, 10).replaceAll("-", "/");
   return (
     <li
       className="m-4 rounded-md border-4 text-center text-lg
@@ -40,7 +39,7 @@ const CardioActivity = (props) => {
           <p>speed : {props.activity.speed} km/h</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
-            {s}
+            {props.activity.date}
           </p>
         </div>
       </Link>
@@ -49,7 +48,6 @@ const CardioActivity = (props) => {
 };
 
 const WeightActivity = (props) => {
-  let s = props.activity.date.slice(0, 10).replaceAll("-", "/");
   return (
     <li
       className="m-4 rounded-md border-4 text-center text-lg
@@ -68,7 +66,7 @@ const WeightActivity = (props) => {
           <p>sets : {props.activity.sets} km/h</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
-            {s}
+            {props.activity.date}
           </p>
         </div>
       </Link>
@@ -76,7 +74,6 @@ const WeightActivity = (props) => {
   );
 };
 const CalisthenicsActivity = (props) => {
-  let s = props.activity.date.slice(0, 10).replaceAll("-", "/");
   return (
     <li
       className="m-4 rounded-md border-4 text-center text-lg
@@ -94,7 +91,7 @@ const CalisthenicsActivity = (props) => {
           <p>sets : {props.activity.sets} km/h</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
-            {s}
+            {props.activity.date}
           </p>
         </div>
       </Link>
@@ -102,7 +99,6 @@ const CalisthenicsActivity = (props) => {
   );
 };
 const FlexibilityActivity = (props) => {
-  let s = props.activity.date.slice(0, 10).replaceAll("-", "/");
   return (
     <li
       className="m-4 rounded-md border-4 text-center text-lg
@@ -121,7 +117,7 @@ const FlexibilityActivity = (props) => {
           <p>sets : {props.activity.sets} km/h</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
-            {s}
+            {props.activity.date}
           </p>
         </div>
       </Link>

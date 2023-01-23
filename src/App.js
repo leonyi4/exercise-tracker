@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import ActivityDetail from "./components/ActivityDetail";
-import EditActivity from "./components/EditActivity";
+import ActivityDetail from "./components/Activity/ActivityDetail";
+import EditActivity from "./components/Activity/EditActivity";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
