@@ -86,6 +86,7 @@ const FlexibilityActivity = (props) => {
         <p>reps : {props.activity.reps} km/h</p>
         <p>sets : {props.activity.sets} km/h</p>
         <p>duration : {props.activity.duration} mins</p>
+        <p>Date: {props.activity.date}</p>
       </div>
     </li>
   );

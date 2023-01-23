@@ -1,21 +1,10 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
+import { Layout } from "./Layout";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
-import View from "./pages/View/View";
-
-const Layout = () => {
-  return (
-    <div className=" dark:bg-[black]">
-      <Nav />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
+import View, { loader as activityLoader } from "./pages/View/View";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: "view",
         element: <View />,
+        loader: activityLoader,
       },
       {
         path: "profile",

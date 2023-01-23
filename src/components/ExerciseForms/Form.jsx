@@ -21,13 +21,10 @@ const Form = (props) => {
         },
       }
     )
-      .then((response) => {
-        const data = response.json();
-        console.log(data);
+      .then(() => {
+        navigate(0);
       })
       .catch((err) => console.log(err.message));
-
-    navigate("/view");
   };
 
   const formDataHandler = (data) => {
