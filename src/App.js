@@ -1,8 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import ActivityDetail from "./components/ActivityDetail";
+import EditActivity from "./components/EditActivity";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import ActivityLayout from "./pages/UI/ActivityLayout";
 import Error from "./pages/UI/Error";
 import Layout from "./pages/UI/Layout";
 import View, { loader as activityLoader } from "./pages/View/View";
@@ -18,11 +21,6 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "view",
-        element: <View />,
-        loader: activityLoader,
-      },
-      {
         path: "profile",
         element: <Profile />,
       },
@@ -33,6 +31,15 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "view",
+        element: <ActivityLayout />,
+        children: [
+          { path: "", element: <View />, loader: activityLoader },
+          { path: ":id", element: <ActivityDetail /> },
+          { path: ":id/edit", element: <EditActivity /> },
+        ],
       },
     ],
   },

@@ -25,7 +25,7 @@ const View = () => {
   );
 
   return (
-    <div className="max-w-[1024px] mx-auto  min-h-screen flex flex-col ">
+    <div className="max-w-[1024px]  mx-auto  min-h-screen flex flex-col ">
       <div className="mx-auto">{content}</div>
       <ExerciseList />
     </div>
@@ -35,20 +35,13 @@ const View = () => {
 export default View;
 
 export async function loader() {
-  const loadedData = [];
   const response = await fetch(
     "https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data.json"
   );
 
   if (!response.ok) {
+    return { isError: true, message: "Can't fetch messages :-(" };
   } else {
-    const data = await response.json();
-    console.log(data);
-    for (const key in data) {
-      loadedData.push({ id: key, ...data[key] });
-    }
-    return loadedData;
+    return response;
   }
-
-  return loadedData;
 }

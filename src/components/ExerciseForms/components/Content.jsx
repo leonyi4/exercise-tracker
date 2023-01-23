@@ -75,7 +75,7 @@ const CardioForm = (props) => {
           className="flex-grow rounded-md pl-2 bg-primary dark:bg-black dark:text-primary focus:bg-gray-300 text-black"
           type="number"
           name="duration"
-          placeholder="total activity duration (mins)"
+          placeholder="activity duration (mins)"
           ref={durationRef}
         />
       </label>
@@ -170,7 +170,7 @@ const WeightForm = (props) => {
           className="flex-grow rounded-md pl-2 bg-primary dark:bg-black dark:text-primary focus:bg-gray-300 text-[black]"
           type="number"
           name="duration"
-          placeholder="total activity duration (mins)"
+          placeholder="activity duration (mins)"
           ref={durationRef}
         />
       </label>
@@ -253,7 +253,7 @@ const CalisthenicsForm = (props) => {
           className="flex-grow rounded-md pl-2 bg-primary dark:bg-black dark:text-primary focus:bg-gray-300 text-[black]"
           type="number"
           name="duration"
-          placeholder="total activity duration (mins)"
+          placeholder="activity duration (mins)"
           ref={durationRef}
         />
       </label>
@@ -335,7 +335,7 @@ const FlexibilityForm = (props) => {
           className="flex-grow rounded-md pl-2 bg-primary dark:bg-black dark:text-primary focus:bg-gray-300 text-[black]"
           type="number"
           name="duration"
-          placeholder="total activity duration (mins)"
+          placeholder="activity duration (mins)"
           ref={durationRef}
         />
       </label>
