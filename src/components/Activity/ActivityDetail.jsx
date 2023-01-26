@@ -24,6 +24,12 @@ const ActivityDetail = () => {
 
   return (
     <div className="max-w-[1024px]  mx-auto  min-h-screen h-screen w-full">
+      <h1
+        className="text-4xl font-bold my-10 text-center text-secondary dark:text-primary
+      rounded-md p-2 mx-auto w-fit bg-green dark:bg-brown"
+      >
+        Exercise Detail
+      </h1>
       <ActivityContent data={details} />
     </div>
   );

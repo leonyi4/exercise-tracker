@@ -261,19 +261,11 @@ const CalisthenicsForm = (props) => {
         <button
           type="button"
           onClick={(e) => props.closeHandler()}
-          className="mx-1 mt-2 p-2 rounded-2xl border-[3px] text-white dark:text-black  font-semibold
-           dark:bg-primary dark:border-secondary hover:bg-orange dark:hover:bg-brown
-            bg-secondary border-primary dark:hover:text-primary "
+          className="mx-1 mt-2 btn "
         >
           Cancel
         </button>
-        <button
-          type="submit"
-          onClick={submitHandler}
-          className="mx-1 mt-2 p-2 rounded-2xl border-[3px] text-white dark:text-black  font-semibold
-         dark:bg-primary dark:border-secondary hover:bg-orange dark:hover:bg-brown
-          bg-secondary border-primary dark:hover:text-primary "
-        >
+        <button type="submit" onClick={submitHandler} className="mx-1 mt-2 btn">
           Submit
         </button>
       </div>

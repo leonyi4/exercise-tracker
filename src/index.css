@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn {
-  @apply mx-1 mt-2 p-2 rounded-2xl border-[3px] text-white dark:text-black  font-semibold
+  @apply p-2 rounded-2xl border-[3px] text-white dark:text-secondary  font-semibold
     dark:bg-primary dark:border-secondary 
      bg-secondary border-primary;
 }
