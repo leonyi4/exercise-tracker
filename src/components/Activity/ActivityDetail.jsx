@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ActivityContent from "./ActivityContent";
 
 const ActivityDetail = () => {
   const [details, setDetails] = useState({});
   const params = useParams();
+  const navigate = useNavigate();
 
   const fetchData = useCallback(async () => {
     const response = await fetch(
@@ -20,7 +21,20 @@ const ActivityDetail = () => {
 
   useEffect(() => {
     fetchData();
+    window.scroll(0, 0);
   }, [fetchData]);
+
+  const deleteHandler = async (id) => {
+    try {
+      await fetch(
+        `https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data/${id}.json`,
+        { method: "DELETE" }
+      );
+      navigate("/view");
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   return (
     <div className="max-w-[1024px]  mx-auto  min-h-screen h-screen w-full">
@@ -30,7 +44,11 @@ const ActivityDetail = () => {
       >
         Exercise Detail
       </h1>
-      <ActivityContent data={details} />
+      <ActivityContent
+        id={params.id}
+        deleteActivity={deleteHandler}
+        data={details}
+      />
     </div>
   );
 };

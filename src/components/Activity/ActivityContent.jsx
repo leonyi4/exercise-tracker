@@ -3,17 +3,39 @@ import React from "react";
 const ActivityContent = (props) => {
   if (props.data.type === "Cardio") {
     return (
-      <CardioContent data={props.data} deleteActivity={props.deleteActivity} />
+      <CardioContent
+        id={props.id}
+        data={props.data}
+        deleteActivity={props.deleteActivity}
+      />
     );
   }
   if (props.data.type === "Weight") {
-    return <WeightContent data={props.data} />;
+    return (
+      <WeightContent
+        id={props.id}
+        data={props.data}
+        deleteActivity={props.deleteActivity}
+      />
+    );
   }
   if (props.data.type === "Calisthenics") {
-    return <CalisthenicsContent data={props.data} />;
+    return (
+      <CalisthenicsContent
+        id={props.id}
+        data={props.data}
+        deleteActivity={props.deleteActivity}
+      />
+    );
   }
   if (props.data.type === "Flexibility") {
-    return <FlexibilityContent data={props.data} />;
+    return (
+      <FlexibilityContent
+        id={props.id}
+        data={props.data}
+        deleteActivity={props.deleteActivity}
+      />
+    );
   }
 
   return <div>Wrong type!</div>;
@@ -22,6 +44,9 @@ const ActivityContent = (props) => {
 export default ActivityContent;
 
 const CardioContent = (props) => {
+  const deleteActivityHandler = () => {
+    props.deleteActivity(props.id);
+  };
   return (
     <div
       className="grid grid-cols-2 grid-rows-5 mx-auto w-[600px] rounded-md  text-center text-lg
@@ -43,7 +68,7 @@ const CardioContent = (props) => {
         <button className="btn">Edit</button>
       </div>
       <div className="col-span-1 row-span-2 justify-self-start ml-2 mb-2">
-        <button onClick={props.deleteActivity} className="btn">
+        <button onClick={deleteActivityHandler} className="btn">
           Delete
         </button>
       </div>
@@ -52,6 +77,9 @@ const CardioContent = (props) => {
 };
 
 const WeightContent = (props) => {
+  const deleteActivityHandler = () => {
+    props.deleteActivity(props.id);
+  };
   return (
     <div
       className="grid grid-cols-2 grid-rows-7 mx-auto w-[600px] rounded-md  text-center text-lg
@@ -77,12 +105,17 @@ const WeightContent = (props) => {
         <button className="btn">Edit</button>
       </div>
       <div className="col-span-1 row-span-2 justify-self-start ml-2 mb-2">
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={deleteActivityHandler}>
+          Delete
+        </button>
       </div>
     </div>
   );
 };
 const CalisthenicsContent = (props) => {
+  const deleteActivityHandler = () => {
+    props.deleteActivity(props.id);
+  };
   return (
     <div
       className="grid grid-cols-2 grid-rows-6 mx-auto w-[600px] rounded-md  text-center text-lg
@@ -106,12 +139,17 @@ const CalisthenicsContent = (props) => {
         <button className="btn">Edit</button>
       </div>
       <div className="col-span-1 row-span-2 justify-self-start ml-2 mb-2">
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={deleteActivityHandler}>
+          Delete
+        </button>
       </div>
     </div>
   );
 };
 const FlexibilityContent = (props) => {
+  const deleteActivityHandler = () => {
+    props.deleteActivity(props.id);
+  };
   return (
     <div
       className="grid grid-cols-2 grid-rows-7 mx-auto w-[600px] rounded-md  text-center text-lg
@@ -135,7 +173,9 @@ const FlexibilityContent = (props) => {
         <button className="btn">Edit</button>
       </div>
       <div className="col-span-1 row-span-2 justify-self-start ml-2 mb-2">
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={deleteActivityHandler}>
+          Delete
+        </button>
       </div>
     </div>
   );
