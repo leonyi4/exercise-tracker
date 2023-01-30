@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "../../components/ExerciseForms/Form";
 import ExerciseList from "../../components/ExerciseList/ExerciseList";
 
@@ -8,6 +8,10 @@ const View = () => {
   const closeHandler = () => {
     setIsAdding(!isAdding);
   };
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
 
   let content = isAdding ? (
     <Form closeHandler={closeHandler} />

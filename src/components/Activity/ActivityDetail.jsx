@@ -36,6 +36,10 @@ const ActivityDetail = () => {
     }
   };
 
+  const backHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="max-w-[1024px]  mx-auto  min-h-screen h-screen w-full">
       <h1
@@ -49,6 +53,12 @@ const ActivityDetail = () => {
         deleteActivity={deleteHandler}
         data={details}
       />
+      <button
+        onClick={backHandler}
+        className="btn text-center w-24 content-center block my-5 mx-auto"
+      >
+        Back
+      </button>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const ExerciseList = (props) => {
   return (
     <div className="mt-20 max-h-full">
       <ul className="no-underline w-full ">
-        {formData.map((activity, index) => (
+        {formData.map((activity) => (
           <ExerciseActivity
             key={activity.id}
             id={activity.id}
