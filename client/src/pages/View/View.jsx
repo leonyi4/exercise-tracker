@@ -39,13 +39,11 @@ const View = () => {
 export default View;
 
 export async function loader() {
-  const response = await fetch(
-    "https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data.json"
-  );
-
+  const response = await fetch("http://localhost:5000/view");
+  const r = await response.json();
   if (!response.ok) {
     return { isError: true, message: "Can't fetch messages :-(" };
   } else {
-    return response;
+    return r.activities;
   }
 }

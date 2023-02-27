@@ -6,12 +6,12 @@ exports.postActivity = (req, res, next) => {
   console.log(req.body);
   const exerciseType = req.body.exerciseType;
   const exerciseData = req.body.exerciseData;
-  const userId = req.body.userId;
+  const userId = req.user;
 
   const activity = new Activity({
     exerciseType: exerciseType,
     exerciseData: exerciseData,
-    userId: new mongoose.Types.ObjectId(userId),
+    userId: userId,
   });
 
   activity
@@ -24,3 +24,17 @@ exports.postActivity = (req, res, next) => {
       console.log(err);
     });
 };
+
+exports.getActivities = (req, res, next) => {
+  Activity.find()
+    .then((activities) => {
+      res
+        .status(200)
+        .json({ messge: "activities sent", activities: activities });
+    })
+    .catch((err) => console.log(err));
+};
+
+// exports.getActivity = (req, res, next) => {
+//   const activityId = req.param.activityId;
+// };

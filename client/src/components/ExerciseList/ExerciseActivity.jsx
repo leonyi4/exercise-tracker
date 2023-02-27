@@ -1,18 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const ExerciseActivity = (props) => {
-  if (props.activity.type === "Cardio") {
-    return <CardioActivity id={props.activity.id} activity={props.activity} />;
+  if (props.exerciseType === "Cardio") {
+    console.log(props.exerciseType);
+    return (
+      <CardioActivity
+        id={props.activity.id}
+        exerciseType={props.exerciseType}
+        activity={props.activity}
+      />
+    );
   }
-  if (props.activity.type === "Weight") {
-    return <WeightActivity id={props.activity.id} activity={props.activity} />;
+  if (props.exerciseType === "Weight") {
+    return (
+      <WeightActivity
+        id={props.activity.id}
+        exerciseType={props.exerciseType}
+        activity={props.activity}
+      />
+    );
   }
-  if (props.activity.type === "Calisthenics") {
+  if (props.exerciseType === "Calisthenics") {
     return (
       <CalisthenicsActivity id={props.activity.id} activity={props.activity} />
     );
   }
-  if (props.activity.type === "Flexibility") {
+  if (props.exerciseType === "Flexibility") {
     return (
       <FlexibilityActivity id={props.activity.id} activity={props.activity} />
     );
@@ -35,7 +48,7 @@ const CardioActivity = (props) => {
           {props.activity.activity}
         </h1>
         <div className="">
-          <p className="">type: {props.activity.type} </p>
+          <p className="">type: {props.exerciseType} </p>
           <p>speed : {props.activity.speed} km/h</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
@@ -60,10 +73,10 @@ const WeightActivity = (props) => {
           {props.activity.activity}
         </h1>
         <div className="">
-          <p>type: {props.activity.type}</p>
+          <p>type: {props.exerciseType}</p>
           <p>weight: {props.activity.weight} kg</p>
-          <p>reps : {props.activity.reps} km/h</p>
-          <p>sets : {props.activity.sets} km/h</p>
+          <p>reps : {props.activity.reps}</p>
+          <p>sets : {props.activity.sets}</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
             {props.activity.date}
@@ -86,9 +99,9 @@ const CalisthenicsActivity = (props) => {
           {props.activity.activity}
         </h1>
         <div>
-          <p>type: {props.activity.type}</p>
-          <p>reps : {props.activity.reps} km/h</p>
-          <p>sets : {props.activity.sets} km/h</p>
+          <p>type: {props.exerciseType}</p>
+          <p>reps : {props.activity.reps}</p>
+          <p>sets : {props.activity.sets}</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
             {props.activity.date}
@@ -112,9 +125,9 @@ const FlexibilityActivity = (props) => {
         </h1>
 
         <div>
-          <p>type: {props.activity.type}</p>
-          <p>reps : {props.activity.reps} km/h</p>
-          <p>sets : {props.activity.sets} km/h</p>
+          <p>type: {props.exerciseType}</p>
+          <p>reps : {props.activity.reps}</p>
+          <p>sets : {props.activity.sets}</p>
           <p>duration : {props.activity.duration} mins</p>
           <p className="mx-auto  w-fit dark:bg-brown bg-green text-black dark:text-primary">
             {props.activity.date}

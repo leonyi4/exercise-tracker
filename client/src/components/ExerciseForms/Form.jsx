@@ -10,17 +10,15 @@ const Form = (props) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    console.log(formData);
     e.preventDefault();
-    fetch(
-      "https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data.json",
-      {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("http://localhost:5000/view", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then(() => {
         navigate(0);
       })
@@ -31,12 +29,14 @@ const Form = (props) => {
     const s = new Date();
     let date = s.toString();
     date = date.slice(0, 15);
+    console.log(data);
 
     setFormData((formData) => ({
-      ...formData,
-      type: selected,
-      ...data,
-      date: date,
+      exerciseType: selected,
+      exerciseData: {
+        ...data,
+        date: date,
+      },
     }));
   };
 

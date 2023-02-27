@@ -4,7 +4,7 @@ const viewController = require("../controllers/view");
 
 const router = express.Router();
 
-// router.get('/view',viewController.getActivities)
+router.get("/view", viewController.getActivities);
 
 // router.get('/view/:viewId',viewController.getActivity)
 

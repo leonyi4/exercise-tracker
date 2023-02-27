@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 require("dotenv").config();
 const app = express();
@@ -11,7 +12,7 @@ const viewRoutes = require("./routes/view");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use(cors());
 app.use((req, res, next) => {
   User.findById(process.env.MONGO_ID)
     .then((user) => {
@@ -34,12 +35,10 @@ mongoose
           name: "leo",
           age: 18,
           email: "leo@test.com",
-          activities: [],
         });
         user.save();
       }
     });
-    console.log("a");
     app.listen(5000);
   })
   .catch((err) => {
