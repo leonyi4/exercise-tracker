@@ -8,14 +8,11 @@ const EditActivity = (props) => {
   const navigate = useNavigate();
 
   const fetchData = useCallback(async () => {
-    const response = await fetch(
-      `https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data/${params.id}.json`
-    );
+    const response = await fetch(`http://localhost:5000/view/${params.id}`);
 
     const data = await response.json();
     setDetails((details) => ({
-      ...details,
-      ...data,
+      ...data.activity,
     }));
   }, [params.id]);
 
@@ -25,20 +22,17 @@ const EditActivity = (props) => {
   }, [fetchData]);
 
   const submitHandler = async (data) => {
-    const { id, ...body } = data;
-    console.log(body);
+    const { id, exerciseData } = data;
+    console.log(exerciseData);
     console.log(id);
     try {
-      await fetch(
-        `https://exercise-tracker-d2354-default-rtdb.asia-southeast1.firebasedatabase.app/data/${id}.json`,
-        {
-          method: "PUT",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      await fetch(`http://localhost:5000/view/${id}/edit`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       console.log("Data updated successfully!");
       navigate("/view");
     } catch (err) {
@@ -56,8 +50,9 @@ const EditActivity = (props) => {
       </h1>
       <EditActivityContent
         submitData={submitHandler}
-        id={params.id}
-        data={details}
+        id={details._id}
+        exerciseType={details.exerciseType}
+        exerciseData={details.exerciseData}
       />
     </div>
   );

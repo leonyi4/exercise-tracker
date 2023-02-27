@@ -6,10 +6,12 @@ const router = express.Router();
 
 router.get("/view", viewController.getActivities);
 
-// router.get('/view/:viewId',viewController.getActivity)
+router.get("/view/:activityId", viewController.getActivity);
 
 router.post("/view", viewController.postActivity);
 
-// router.post('/view-delete-item',vieController.postDeleteActivity)
+// router.post('/view-delete-item',viewController.postDeleteActivity);
+
+router.post("/view/:viewId/edit", viewController.editActivity);
 
 module.exports = router;

@@ -1,6 +1,5 @@
 const Activity = require("../models/activity");
 const User = require("../models/user");
-const mongoose = require("mongoose");
 
 exports.postActivity = (req, res, next) => {
   console.log(req.body);
@@ -28,13 +27,32 @@ exports.postActivity = (req, res, next) => {
 exports.getActivities = (req, res, next) => {
   Activity.find()
     .then((activities) => {
-      res
-        .status(200)
-        .json({ messge: "activities sent", activities: activities });
+      res.status(200).json({ activities: activities });
     })
     .catch((err) => console.log(err));
 };
 
-// exports.getActivity = (req, res, next) => {
-//   const activityId = req.param.activityId;
-// };
+exports.getActivity = (req, res, next) => {
+  const activityId = req.params.activityId;
+  Activity.findById(activityId)
+    .then((activity) => {
+      res.status(200).json({ activity: activity });
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.editActivity = (req, res, next) => {
+  const activityId = req.body.id;
+  const updatedExerciseData = req.body.exerciseData;
+
+  Activity.findById(activityId)
+    .then((activity) => {
+      activity.exerciseData = updatedExerciseData;
+      return activity.save();
+    })
+    .then((result) => {
+      console.log("updated activity!");
+      res.status(200).json("updated activity");
+    })
+    .catch((err) => console.log(err));
+};

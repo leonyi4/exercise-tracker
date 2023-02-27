@@ -23,12 +23,13 @@ const CardioContent = (props) => {
 
   const submitHandler = () => {
     const data = {
-      activity,
-      speed,
-      duration,
       id: props.id,
-      type: "Cardio",
-      date: props.data.date,
+      exerciseData: {
+        activity,
+        speed,
+        duration,
+        date: props.data.date,
+      },
     };
     props.submitData(data);
   };

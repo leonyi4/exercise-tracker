@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 const ExerciseActivity = (props) => {
   if (props.exerciseType === "Cardio") {
-    console.log(props.exerciseType);
     return (
       <CardioActivity
-        id={props.activity.id}
+        _id={props._id}
         exerciseType={props.exerciseType}
         activity={props.activity}
       />
@@ -14,7 +13,7 @@ const ExerciseActivity = (props) => {
   if (props.exerciseType === "Weight") {
     return (
       <WeightActivity
-        id={props.activity.id}
+        _id={props._id}
         exerciseType={props.exerciseType}
         activity={props.activity}
       />
@@ -22,12 +21,20 @@ const ExerciseActivity = (props) => {
   }
   if (props.exerciseType === "Calisthenics") {
     return (
-      <CalisthenicsActivity id={props.activity.id} activity={props.activity} />
+      <CalisthenicsActivity
+        _id={props._id}
+        exerciseType={props.exerciseType}
+        activity={props.activity}
+      />
     );
   }
   if (props.exerciseType === "Flexibility") {
     return (
-      <FlexibilityActivity id={props.activity.id} activity={props.activity} />
+      <FlexibilityActivity
+        _id={props._id}
+        exerciseType={props.exerciseType}
+        activity={props.activity}
+      />
     );
   }
 };
@@ -43,7 +50,7 @@ const CardioActivity = (props) => {
       hover:opacity-70
    "
     >
-      <Link to={`/view/${props.id}`} className="w-full">
+      <Link to={`/view/${props._id}`} className="w-full">
         <h1 className="text-3xl pb-1 font-bold bg-white text-black dark:text-primary dark:bg-black">
           {props.activity.activity}
         </h1>
@@ -68,7 +75,7 @@ const WeightActivity = (props) => {
       bg-secondary  border-brown text-primary
    "
     >
-      <Link to={`/view/${props.id}`} className="w-full">
+      <Link to={`/view/${props._id}`} className="w-full">
         <h1 className="text-3xl pb-1 font-bold bg-white text-black dark:text-primary dark:bg-black">
           {props.activity.activity}
         </h1>
@@ -94,7 +101,7 @@ const CalisthenicsActivity = (props) => {
     bg-secondary  border-brown text-primary
  "
     >
-      <Link to={`/view/${props.id}`} className="w-full">
+      <Link to={`/view/${props._id}`} className="w-full">
         <h1 className="text-3xl pb-1 font-bold bg-white text-black dark:text-primary dark:bg-black">
           {props.activity.activity}
         </h1>
@@ -119,7 +126,7 @@ const FlexibilityActivity = (props) => {
       bg-secondary  border-brown text-primary
    "
     >
-      <Link to={`/view/${props.id}`} className="w-full">
+      <Link to={`/view/${props._id}`} className="w-full">
         <h1 className="text-3xl pb-1 font-bold bg-white text-black dark:text-primary dark:bg-black">
           {props.activity.activity}
         </h1>

@@ -5,38 +5,38 @@ import FlexibilityContent from "./EditContents/FlexibilityContent";
 import WeightContent from "./EditContents/WeightContent";
 
 const EditActivityContent = (props) => {
-  if (props.data.type === "Cardio") {
+  if (props.exerciseType === "Cardio") {
     return (
       <CardioContent
         submitData={props.submitData}
-        data={props.data}
+        data={props.exerciseData}
         id={props.id}
       />
     );
   }
-  if (props.data.type === "Weight") {
+  if (props.exerciseType === "Weight") {
     return (
       <WeightContent
         submitData={props.submitData}
-        data={props.data}
+        data={props.exerciseData}
         id={props.id}
       />
     );
   }
-  if (props.data.type === "Calisthenics") {
+  if (props.exerciseType === "Calisthenics") {
     return (
       <CalisthenicsContent
         submitData={props.submitData}
-        data={props.data}
+        data={props.exerciseData}
         id={props.id}
       />
     );
   }
-  if (props.data.type === "Flexibility") {
+  if (props.exerciseType === "Flexibility") {
     return (
       <FlexibilityContent
         submitData={props.submitData}
-        data={props.data}
+        data={props.exerciseData}
         id={props.id}
       />
     );

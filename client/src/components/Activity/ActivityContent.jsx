@@ -5,38 +5,38 @@ import FlexibilityContent from "./DetailContent/FlexibilityContent";
 import WeightContent from "./DetailContent/WeightContent";
 
 const ActivityContent = (props) => {
-  if (props.data.type === "Cardio") {
+  if (props.exerciseType === "Cardio") {
     return (
       <CardioContent
-        id={props.id}
-        data={props.data}
+        id={props._id}
+        data={props.exerciseData}
         deleteActivity={props.deleteActivity}
       />
     );
   }
-  if (props.data.type === "Weight") {
+  if (props.exerciseType === "Weight") {
     return (
       <WeightContent
-        id={props.id}
-        data={props.data}
+        id={props._id}
+        data={props.exerciseData}
         deleteActivity={props.deleteActivity}
       />
     );
   }
-  if (props.data.type === "Calisthenics") {
+  if (props.exerciseType === "Calisthenics") {
     return (
       <CalisthenicsContent
-        id={props.id}
-        data={props.data}
+        id={props._id}
+        data={props.exerciseData}
         deleteActivity={props.deleteActivity}
       />
     );
   }
-  if (props.data.type === "Flexibility") {
+  if (props.exerciseType === "Flexibility") {
     return (
       <FlexibilityContent
-        id={props.id}
-        data={props.data}
+        id={props._id}
+        data={props.exerciseData}
         deleteActivity={props.deleteActivity}
       />
     );

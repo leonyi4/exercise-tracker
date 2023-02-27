@@ -33,14 +33,15 @@ const WeightContent = (props) => {
 
   const submitHandler = () => {
     const data = {
-      activity,
-      weight,
-      reps,
-      sets,
-      duration,
       id: props.id,
-      type: "Weight",
-      date: props.data.date,
+      exerciseData: {
+        activity,
+        weight,
+        reps,
+        sets,
+        duration,
+        date: props.data.date,
+      },
     };
     props.submitData(data);
   };

@@ -29,13 +29,8 @@ const FlexibilityContent = (props) => {
 
   const submitHandler = () => {
     const data = {
-      activity,
-      reps,
-      sets,
-      duration,
       id: props.id,
-      type: "Flexibility",
-      date: props.data.date,
+      exerciseData: { activity, reps, sets, duration, date: props.data.date },
     };
     props.submitData(data);
   };
