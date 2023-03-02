@@ -4,7 +4,7 @@ import { SiGmail } from "react-icons/si";
 
 const footer = () => {
   return (
-    <div className="w-full  py-4 px-16 mt-4 bg-black dark:bg-green text-primary dark:text-black ">
+    <div className="w-full  py-4 px-16 mt-4 bg-secondary dark:bg-green text-primary dark:text-black ">
       <div className="max-w-[1024px] mx-auto">
         <h1 className="text-center font-bold text-brown dark:text-orange w-full text-3xl">
           CET
