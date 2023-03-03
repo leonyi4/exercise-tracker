@@ -30,7 +30,9 @@ app.use(
   })
 );
 app.use((req, res, next) => {
-  console.log(req.sessionID.isLoggedIn);
+  if (!req.session.user) {
+    return next();
+  }
   User.findById(process.env.MONGO_ID)
     .then((user) => {
       req.user = user;
@@ -39,6 +41,11 @@ app.use((req, res, next) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.isLoggedIn;
+  next();
 });
 
 app.use(viewRoutes);
