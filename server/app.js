@@ -27,13 +27,16 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: store,
+    cookie: {
+      expires: 60 * 60 * 24,
+    },
   })
 );
 app.use((req, res, next) => {
   if (!req.session.user) {
     return next();
   }
-  User.findById(process.env.MONGO_ID)
+  User.findById(req.session.user._id)
     .then((user) => {
       req.user = user;
       next();
@@ -44,7 +47,6 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.locals.isAuthenticated = req.session.isLoggedIn;
   next();
 });
 
